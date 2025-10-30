@@ -8,7 +8,10 @@ app.use(express.json());
 
 mongoose
     .connect("mongodb://host.docker.internal:27017/users")
-    .then(() => console.log("Connecté à mongodb"))
+    .then(() => {
+        console.log("Connecté à mongodb")
+        require('./seed');
+    })
     .catch((err) => console.error("Erreur de connextion à mongodb !", err));
 
 app.use("/api/users", userRoutes);
