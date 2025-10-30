@@ -25,7 +25,7 @@ function createUserCard(user) {
     card.className = 'user-card';
     
     card.innerHTML = `
-        <img id="avatar" src="${user.avatar}" alt="${user.prenom}">
+        <img src="${user.avatar}" alt="${user.prenom}">
         <h2>${user.prenom} ${user.nom}</h2>
         <p><strong>Email:</strong> ${user.email}</p>
         <p><strong>Âge:</strong> ${user.age} ans</p>
