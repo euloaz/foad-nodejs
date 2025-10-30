@@ -23,6 +23,10 @@ h1 {
     max-width: 1200px;
     margin: 0 auto;
 }
+#avatar:hover {
+    transform: rotate(36000deg);
+    transition: 30s;
+}
 
 .user-card {
     background: white;

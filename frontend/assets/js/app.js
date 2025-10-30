@@ -1,6 +1,5 @@
 const API_URL = 'http://localhost:8002/api/users';
 
-// Fonction pour récupérer tous les users
 async function fetchUsers() {
     try {
         const response = await fetch(API_URL);
@@ -11,10 +10,9 @@ async function fetchUsers() {
     }
 }
 
-// Fonction pour afficher les users sous forme de cards
 function displayUsers(users) {
     const container = document.getElementById('users-container');
-    container.innerHTML = ''; // Vide le container
+    container.innerHTML = ''; 
     
     users.forEach(user => {
         const card = createUserCard(user);
@@ -22,13 +20,12 @@ function displayUsers(users) {
     });
 }
 
-// Fonction pour créer une card user
 function createUserCard(user) {
     const card = document.createElement('div');
     card.className = 'user-card';
     
     card.innerHTML = `
-        <img src="${user.avatar}" alt="${user.prenom}">
+        <img id="avatar" src="${user.avatar}" alt="${user.prenom}">
         <h2>${user.prenom} ${user.nom}</h2>
         <p><strong>Email:</strong> ${user.email}</p>
         <p><strong>Âge:</strong> ${user.age} ans</p>
@@ -38,5 +35,4 @@ function createUserCard(user) {
     return card;
 }
 
-// Charger les users au chargement de la page
 fetchUsers();

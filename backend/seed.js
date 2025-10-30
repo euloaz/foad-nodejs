@@ -5,7 +5,6 @@ const seedUsers = async (nombre) => {
   try {
     const count = await User.countDocuments();
     if (count === 0) {
-      console.log("Insertion de fausses données...");
       const users = [];
       for (let i = 0; i < nombre; i++) {
         users.push({
@@ -22,7 +21,6 @@ const seedUsers = async (nombre) => {
         });
       }
       await User.insertMany(users);
-      console.log(`${nombre} utilisateurs créés !`);
     }
   } catch (err) {
     console.error("Erreur lors du seed :", err);
