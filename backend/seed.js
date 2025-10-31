@@ -6,6 +6,7 @@ const seedUsers = async (nombre) => {
     const count = await User.countDocuments();
     if (count === 0) {
       const users = [];
+      console.log('Création de users...');
       for (let i = 0; i < nombre; i++) {
         users.push({
           prenom: faker.person.firstName(),
@@ -21,6 +22,7 @@ const seedUsers = async (nombre) => {
         });
       }
       await User.insertMany(users);
+      console.log('Users ajoutés à la BDD!');
     }
   } catch (err) {
     console.error("Erreur lors du seed :", err);
